@@ -1,7 +1,6 @@
 // components.tsx
 // 과자 쇼핑 위시리스트 앱의 모든 컴포넌트들
 
-import React from 'react';
 import type {
   SnackCardProps,
   FilterBarProps,
@@ -16,7 +15,7 @@ export const SnackCard /* 타입 지정 */ = ({
   isInWishlist,
   onAddToWishlist,
   onRemoveFromWishlist,
-}) => {
+}: SnackCardProps) => {
   // 할인율 계산 로직
   const discountRate = snack.originalPrice
     ? Math.round(
@@ -140,7 +139,7 @@ export const FilterBar /* 타입 지정 */ = ({
   currentSort,
   onFilterChange,
   onSortChange,
-}) => {
+}: FilterBarProps) => {
   // 카테고리 옵션
   const categories: { value: FilterCategory; label: string }[] = [
     { value: 'all', label: '전체' },
@@ -223,7 +222,7 @@ export const FilterBar /* 타입 지정 */ = ({
 };
 
 // TODO 6: WishlistSummary 컴포넌트의 타입을 지정하세요
-export const WishlistSummary /* 타입 지정 */ = ({ wishlist, totalPrice }) => {
+export const WishlistSummary /* 타입 지정 */ = ({ wishlist, totalPrice }: WishlistSummaryProps) => {
   return (
     <div
       style={{

@@ -21,7 +21,7 @@ export interface Snack {
 
 // TODO 2: WishlistItem 인터페이스를 정의하세요 (Snack을 확장)
 // 추가 속성: addedAt(Date), quantity(number)
-export interface WishlistItem /* 여기에 코드를 작성하세요 */ {
+export interface WishlistItem extends Snack /* 여기에 코드를 작성하세요 */ {
   // 여기에 코드를 작성하세요
   addedAt: Date;
   quantity: number;
