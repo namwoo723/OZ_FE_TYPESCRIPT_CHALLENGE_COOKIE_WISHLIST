@@ -124,7 +124,7 @@ export default function App() {
   };
 
   // TODO 10: isInWishlist 함수의 매개변수와 반환 타입을 지정하세요
-  const isInWishlist = (id: string /* 매개변수 타입 지정 */) /* 반환 타입 지정 */ => {
+  const isInWishlist = (id: string /* 매개변수 타입 지정 */): boolean /* 반환 타입 지정 */ => {
     return wishlist.some((item) => item.id === id);
   };
 

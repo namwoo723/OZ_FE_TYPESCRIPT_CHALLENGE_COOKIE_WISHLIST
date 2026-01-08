@@ -12,7 +12,7 @@ export interface Snack {
     brand: string;
     price: number;
     originalPrice?: number;
-    category: "cookie" | "chocolate" | "candy" | "chip" | "icecream";
+    category: "chocolate" | "cookie" | "candy" | "icecream" | "drink";
     rating: 1 | 2 | 3 | 4 | 5; 
     imageUrl: string;
     isOnSale: boolean;
