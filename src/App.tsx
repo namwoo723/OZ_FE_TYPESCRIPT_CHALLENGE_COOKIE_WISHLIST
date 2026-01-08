@@ -73,9 +73,9 @@ const sampleSnacks: Snack[] = [
 
 export default function App() {
   // TODO 7: 상태 변수들의 타입을 지정하세요
-  const [wishlist, setWishlist] = useState(/* 타입 지정 */ []);
-  const [filter, setFilter] = useState(/* 타입 지정 */ 'all');
-  const [sortBy, setSortBy] = useState(/* 타입 지정 */ 'name');
+  const [wishlist, setWishlist] = useState<WishlistItem[]>([]);
+  const [filter, setFilter] = useState<FilterCategory>(/* 타입 지정 */ 'all');
+  const [sortBy, setSortBy] = useState<SortOption>(/* 타입 지정 */ 'name');
 
   // 위시리스트에 추가하는 함수
   const addToWishlist = (snack: Snack): void => {
@@ -93,7 +93,7 @@ export default function App() {
   };
 
   // TODO 8: getFilteredSnacks 함수의 반환 타입을 지정하세요
-  const getFilteredSnacks = () /* 반환 타입 지정 */ => {
+  const getFilteredSnacks = (): Snack[] /* 반환 타입 지정 */ => {
     let filtered =
       filter === 'all'
         ? sampleSnacks
@@ -116,7 +116,7 @@ export default function App() {
   };
 
   // TODO 9: getTotalPrice 함수의 반환 타입을 지정하세요
-  const getTotalPrice = () /* 반환 타입 지정 */ => {
+  const getTotalPrice = (): number /* 반환 타입 지정 */ => {
     return wishlist.reduce(
       (total, item) => total + item.price * item.quantity,
       0
@@ -124,7 +124,7 @@ export default function App() {
   };
 
   // TODO 10: isInWishlist 함수의 매개변수와 반환 타입을 지정하세요
-  const isInWishlist = (id /* 매개변수 타입 지정 */) /* 반환 타입 지정 */ => {
+  const isInWishlist = (id: string /* 매개변수 타입 지정 */) /* 반환 타입 지정 */ => {
     return wishlist.some((item) => item.id === id);
   };
 
